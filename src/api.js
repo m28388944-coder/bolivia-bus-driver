@@ -9,6 +9,7 @@ export const getSchedules  = (placa) => API.get('/schedules/' + (placa ? '?placa
 export const getBuses      = ()      => API.get('/schedules/');
 export const getPassengers = (id)    => API.get('/bookings/schedule/' + id);
 export const getSeatMap    = (id)    => API.get('/schedules/' + id + '/seats');
-export const WS_URL = 'ws://localhost:8000/tracking/ws';
+export const WS_URL = 'wss://bolivia-bus-backend.onrender.com/tracking/ws';
 
 export default API;
+
