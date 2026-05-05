@@ -33,7 +33,8 @@ export default function DriverLogin({ onLogin }) {
     if (!driver || code !== driver.pin) { setError('PIN incorrecto'); return; }
     setLoading(true);
     try {
-      const res = await API.get('/schedules/');
+      const today = new Date().toISOString().split('T')[0];
+      const res = await API.get('/schedules/?fecha=' + today);
       const data = res.data;
       const lista = Array.isArray(data) ? data : (data.value || data.items || []);
       const today = new Date().toISOString().split('T')[0];
